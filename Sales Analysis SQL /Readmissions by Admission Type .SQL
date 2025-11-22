@@ -1,11 +1,8 @@
-
 SELECT 
-    ADMISSION_TYPE,
-    COUNT(*) AS READMISSION_COUNT,
-    ROUND(
-        COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 
-    2) AS PERCENT_OF_TOTAL
+    admission_type,
+    COUNT(*) AS total_patients,
+    COUNT(CASE WHEN readmission = 'Yes' THEN 1 END) AS readmissions,
+    (COUNT(CASE WHEN readmission = 'Yes' THEN 1 END) * 100.0 / COUNT(*)) AS readmission_rate
 FROM "HOSPITAL"."PUBLIC"."PATIENTSINFO"
-WHERE READMISSION = 'YES'
-GROUP BY ADMISSION_TYPE
-ORDER BY READMISSION_COUNT DESC;
+GROUP BY admission_type
+ORDER BY readmissions DESC;
