@@ -19,10 +19,6 @@ This project analyzes hospital patient readmission data to uncover patterns, tre
    - Patient age, gender, and diagnosis distribution
    - Admission frequency and readmission trends
    - Correlation between patient conditions and readmission
-3. Predictive Insights / Key Findings
-   - Factors most associated with readmission risk
-   - Departments with highest readmission rates
-   - Time-based patterns (e.g., seasonal trends)
 
 ### 💡 Recommendations
 - Target high-risk patients for follow-ups
